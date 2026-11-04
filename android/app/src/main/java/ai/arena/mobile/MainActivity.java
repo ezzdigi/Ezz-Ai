@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
             "  });" +
             " }" +
             " brand();" +
-            " new MutationObserver(function(){brand();}).observe(document.documentElement,{childList:true,subtree:true,characterData:true});" +
+            " // Branding runs once; avoid rescanning the DOM after every React update." +
             "} catch(e) {}" +
             "})();"
             ;
@@ -1018,7 +1018,7 @@ public class MainActivity extends AppCompatActivity {
         }
         try {
             view.evaluateJavascript(SHARE_SHIM_JS, null);
-            view.evaluateJavascript(VIEWPORT_SHIM_JS, null);
+            // Skip costly full-DOM scroll scanning; it is not needed for core interaction.
             view.evaluateJavascript(GLASS_THEME_JS, null);
         } catch (Exception ignored) {
         }
