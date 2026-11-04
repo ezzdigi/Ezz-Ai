@@ -199,11 +199,12 @@ async function runAllTests() {
   const bgSrc = fs.existsSync(bgVector) ? fs.readFileSync(bgVector, 'utf8') : '';
   const fgSrc = fs.existsSync(fgVector) ? fs.readFileSync(fgVector, 'utf8') : '';
 
-  logTest('Branding', 'Adaptive Background Vector is Pure Black (#000000)',
-    bgSrc.includes('#000000') && !bgSrc.includes('#26a69a'));
+  logTest('Branding', 'Ezz-Ai Adaptive Background uses the custom dark violet palette',
+    bgSrc.includes('#090511') && bgSrc.includes('#17102A'));
 
-  logTest('Branding', 'Adaptive Foreground Vector contains Official Classical Pillar Mark',
-    fgSrc.includes('pathData="M57.5364') && fgSrc.includes('#FFFFFF') && !fgSrc.includes('robot'));
+  logTest('Branding', 'Ezz-Ai Adaptive Foreground contains the custom EZZ-Ai mark',
+    fgSrc.includes('#EDE9FE') && fgSrc.includes('#A855F7') &&
+    fgSrc.includes('#C026D3') && fgSrc.includes('pathData="M17,29'));
 
   logTest('Branding', 'Android 13+ Themed Monochrome Vector Present',
     fs.existsSync(monoVector));
