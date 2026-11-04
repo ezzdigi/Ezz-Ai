@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Arena.ai</string>
+    <string name="app_name">Ezz-Ai</string>
 
     <!-- Web platform availability -->
-    <string name="webview_unavailable">Android System WebView is missing or disabled. Please enable or update it, then reopen Arena.ai.</string>
+    <string name="webview_unavailable">Android System WebView is missing or disabled. Please enable or update it, then reopen Ezz-Ai.</string>
     <string name="ssl_error">Secure connection failed. Please try again.</string>
     <string name="external_link_unavailable">No app is available to open this link.</string>
     <string name="renderer_restarted">Arena restarted after a display error.</string>
@@ -12,7 +12,7 @@
     <string name="no_file_manager">No file manager found.</string>
 
     <!-- JavaScript dialogs -->
-    <string name="dialog_title">Arena.ai</string>
+    <string name="dialog_title">Ezz-Ai</string>
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="leave_page_title">Leave page?</string>
@@ -30,11 +30,11 @@
     <string name="download_in_progress">A download is already in progress.</string>
     <string name="download_too_large">This file is too large to download.</string>
     <string name="download_no_manager">No download manager is available.</string>
-    <string name="download_notification_description">Downloading from Arena.ai</string>
+    <string name="download_notification_description">Downloading from Ezz-Ai</string>
 
     <!-- In-app updates -->
     <string name="update_available_title">Update Available</string>
-    <string name="update_available_message">A new version of Arena AI (%1$s) is available.</string>
+    <string name="update_available_message">A new version of Ezz-Ai (%1$s) is available.</string>
     <string name="update_size">Size: %1$.2f MB</string>
     <string name="update_prompt">Would you like to download and install this update?</string>
     <string name="update_now">Update Now</string>
@@ -42,7 +42,7 @@
     <string name="update_skip">Skip This Version</string>
     <string name="update_downloading_title">Downloading Update</string>
     <string name="update_downloading_preparing">Preparing download…</string>
-    <string name="update_downloading_message">Downloading Arena AI %1$s… %2$d%%</string>
+    <string name="update_downloading_message">Downloading Ezz-Ai %1$s… %2$d%%</string>
     <string name="update_cancel">Cancel</string>
     <string name="update_cancelled">Update cancelled.</string>
     <string name="update_download_in_progress">An update download is already in progress.</string>
@@ -52,10 +52,10 @@
     <string name="update_verification_failed_message">This update could not be verified and was not installed.\n\nReason: %1$s</string>
     <string name="update_reason_missing_hash">No published checksum was available for the download.</string>
     <string name="update_reason_hash">The downloaded file does not match the published checksum.</string>
-    <string name="update_reason_package">The downloaded file is not an Arena AI package.</string>
+    <string name="update_reason_package">The downloaded file is not an Ezz-Ai package.</string>
     <string name="update_reason_version">The downloaded update is older than the installed app.</string>
     <string name="update_reason_signer">The update is signed with a different key than the installed app.</string>
     <string name="update_reason_parse">The downloaded file is not a valid APK.</string>
-    <string name="update_install_permission">Please allow Arena AI to install updates, then return to complete.</string>
+    <string name="update_install_permission">Please allow Ezz-Ai to install updates, then return to complete.</string>
     <string name="update_install_failed">Could not open the installer: %1$s</string>
 </resources>
