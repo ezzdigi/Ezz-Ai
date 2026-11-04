@@ -141,6 +141,31 @@ public class MainActivity extends AppCompatActivity {
     private static final int MAX_RETRY_DELAY_MS = 30000;
 
     /**
+     * EzzDigi frosted-glass visual layer for Arena pages.
+     * Kept in the native wrapper so the upstream Arena site remains untouched.
+     */
+    private static final String GLASS_THEME_JS =
+            "(function(){try{"
+                    + "if(window.__ezzGlassTheme){return;}window.__ezzGlassTheme=true;"
+                    + "var css=':root{color-scheme:dark;--ezz-glass:rgba(20,16,34,.66);--ezz-line:rgba(196,132,255,.24);--ezz-violet:#a855f7;--ezz-pink:#e879f9;}'"
+                    + "+'html,body{background-color:#08060d!important;color:#f7f2ff!important;}'"
+                    + "+'body{background-image:radial-gradient(ellipse at 18% 8%,rgba(126,34,206,.22),transparent 42%),radial-gradient(ellipse at 88% 76%,rgba(168,85,247,.16),transparent 38%)!important;background-attachment:fixed!important;}'"
+                    + "+'header,nav,aside,[role=dialog],[role=menu],[data-radix-popper-content-wrapper],.backdrop-blur,.backdrop-blur-sm,.backdrop-blur-md,.backdrop-blur-lg{background:rgba(13,10,22,.72)!important;backdrop-filter:blur(24px) saturate(155%)!important;-webkit-backdrop-filter:blur(24px) saturate(155%)!important;border-color:var(--ezz-line)!important;}'"
+                    + "+'[class*=card],[class*=Card],[class*=panel],[class*=Panel],[class*=sidebar],[class*=Sidebar],[class*=popover],[class*=Popover],[class*=modal],[class*=Modal]{background-color:var(--ezz-glass)!important;backdrop-filter:blur(22px) saturate(145%)!important;-webkit-backdrop-filter:blur(22px) saturate(145%)!important;border-color:var(--ezz-line)!important;box-shadow:0 10px 40px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.055)!important;}'"
+                    + "+'textarea,input,[contenteditable=true]{background:rgba(255,255,255,.055)!important;color:#fff!important;border:1px solid rgba(196,132,255,.28)!important;border-radius:16px!important;backdrop-filter:blur(18px)!important;}'"
+                    + "+'textarea:focus,input:focus,[contenteditable=true]:focus{border-color:rgba(216,180,254,.78)!important;box-shadow:0 0 0 3px rgba(168,85,247,.15),0 0 24px rgba(168,85,247,.12)!important;outline:none!important;}'"
+                    + "+'button,[role=button]{border-radius:13px!important;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease!important;}'"
+                    + "+'button:hover,[role=button]:hover{border-color:rgba(216,180,254,.45)!important;box-shadow:0 0 20px rgba(168,85,247,.13)!important;}'"
+                    + "+'button[class*=primary],button[type=submit],[role=button][data-variant=primary]{background:linear-gradient(135deg,#9333ea,#c026d3)!important;color:#fff!important;border:1px solid rgba(233,213,255,.3)!important;box-shadow:0 5px 24px rgba(147,51,234,.25)!important;}'"
+                    + "+'hr,[class*=border]{border-color:rgba(196,132,255,.16)!important;}'"
+                    + "+'::selection{background:rgba(168,85,247,.38)!important;color:#fff!important;}'"
+                    + "+'::-webkit-scrollbar{width:7px;height:7px}::-webkit-scrollbar-thumb{background:rgba(168,85,247,.42);border-radius:10px}::-webkit-scrollbar-track{background:transparent}';"
+                    + "function apply(){if(!document.head||document.getElementById('ezz-glass-theme'))return;"
+                    + "var s=document.createElement('style');s.id='ezz-glass-theme';s.textContent=css;document.head.appendChild(s);}"
+                    + "apply();new MutationObserver(function(){apply();}).observe(document.documentElement,{childList:true,subtree:true});"
+                    + "}catch(e){}})();";
+
+    /**
      * Installs {@code navigator.share}/{@code navigator.canShare} for the Arena web app so
      * its share buttons open the Android share sheet. The AndroidX WebMessage bridge is
      * origin-locked to Arena hosts, so no other site can reach the native handler.
@@ -976,6 +1001,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             view.evaluateJavascript(SHARE_SHIM_JS, null);
             view.evaluateJavascript(VIEWPORT_SHIM_JS, null);
+            view.evaluateJavascript(GLASS_THEME_JS, null);
         } catch (Exception ignored) {
         }
     }
