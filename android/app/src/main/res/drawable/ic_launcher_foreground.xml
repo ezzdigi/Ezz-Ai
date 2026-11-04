@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp" android:height="108dp"
-    android:viewportWidth="108" android:viewportHeight="108">
-    <path android:fillColor="#EDE9FE" android:pathData="M17,29h22v7H25v7h12v7H25v7h14v7H17z"/>
-    <path android:fillColor="#A855F7" android:pathData="M42,29h23v7L51,57h14v7H41v-7l14,-21H42z"/>
-    <path android:fillColor="#C026D3" android:pathData="M67,29h23v7L76,57h14v7H66v-7l14,-21H67z"/>
-    <path android:fillColor="#FFFFFF" android:pathData="M25,69h59v3H25z"/>
-    <path android:fillColor="#A855F7" android:pathData="M31,79l8,-5h38l8,5z"/>
-    <path android:fillColor="#D8B4FE" android:pathData="M18,18h72v2H18zM18,88h72v2H18z"/>
-    <path android:fillColor="#C026D3" android:pathData="M89,17a5,5 0,1 0,0.1 0z"/>
-    <path android:fillColor="#A855F7" android:pathData="M14,14h8v2h-8zM86,92h8v2h-8z"/>
-</vector>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ezz_ai_logo"
+    android:inset="12%" />
