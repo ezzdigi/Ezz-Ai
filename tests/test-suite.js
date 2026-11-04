@@ -202,9 +202,9 @@ async function runAllTests() {
   logTest('Branding', 'Ezz-Ai Adaptive Background uses the custom dark violet palette',
     bgSrc.includes('#090511') && bgSrc.includes('#17102A'));
 
-  logTest('Branding', 'Ezz-Ai Adaptive Foreground contains the custom EZZ-Ai mark',
-    fgSrc.includes('#EDE9FE') && fgSrc.includes('#A855F7') &&
-    fgSrc.includes('#C026D3') && fgSrc.includes('pathData="M17,29'));
+  logTest('Branding', 'Ezz-Ai Adaptive Foreground uses the supplied EZZ-Ai artwork',
+    fgSrc.includes('@drawable/ezz_ai_logo')
+    && fs.existsSync(path.join(resDir, 'drawable-nodpi', 'ezz_ai_logo.jpg')));
 
   logTest('Branding', 'Android 13+ Themed Monochrome Vector Present',
     fs.existsSync(monoVector));
