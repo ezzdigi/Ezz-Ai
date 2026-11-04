@@ -108,17 +108,17 @@ jobs:
       - name: Compute checksums
         run: |
           mkdir -p artifacts
-          cp android/app/build/outputs/apk/release/app-release.apk artifacts/ArenaAI.apk
-          cp android/app/build/outputs/apk/debug/app-debug.apk artifacts/ArenaAI-debug.apk
+          cp android/app/build/outputs/apk/release/app-release.apk artifacts/Ezz-Ai.apk
+          cp android/app/build/outputs/apk/debug/app-debug.apk artifacts/Ezz-Ai-debug.apk
           cd artifacts
-          sha256sum ArenaAI.apk > SHA256SUMS
-          sha256sum ArenaAI-debug.apk >> SHA256SUMS
+          sha256sum Ezz-Ai.apk > SHA256SUMS
+          sha256sum Ezz-Ai-debug.apk >> SHA256SUMS
           cat SHA256SUMS
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7
         with:
-          name: arena-ai-apk
+          name: ezz-ai-apk
           path: artifacts/
           if-no-files-found: error
 
